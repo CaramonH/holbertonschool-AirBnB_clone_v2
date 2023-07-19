@@ -76,7 +76,7 @@ if __name__ == '__main__':
         return render_template('9-states.html', not_found=True)
 
     @app.teardown_appcontext
-    def teardown_db(error):
+    def close(self):
         storage.close()
 
 if __name__ == '__main__':
